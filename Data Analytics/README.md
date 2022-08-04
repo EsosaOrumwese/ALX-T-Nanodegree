@@ -1,6 +1,6 @@
 # ALX-T-Nanodegree
 
-ALX-T Data Analyst Nanodegree is a 2 month programme handled in collaborationg with Udacity. It's aimed at
+ALX-T Data Analyst Nanodegree is a 2 month programme handled in collaboration with Udacity. It's aimed at
 equipping Africans with a solid knowledge of a Tech Specialization and also accelerating their 
 career progress.
 
