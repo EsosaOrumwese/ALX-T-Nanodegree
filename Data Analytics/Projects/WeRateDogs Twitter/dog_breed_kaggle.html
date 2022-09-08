@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dog Breed Identification | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Determine the breed of a dog in an image" />
+  <meta name="turbolinks-cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="ALHGtahgbADrn4ta13y0cg==" type="text/javascript">
+    window["pageRequestStartTime"] = 1662656399718;
+    window["pageRequestEndTime"] = 1662656399753;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="ALHGtahgbADrn4ta13y0cg==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=8a3d8387530957456cac" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=17be6e29bddcae4e6f77" />
+  
+    
+ 
+      <script nonce="ALHGtahgbADrn4ta13y0cg==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="ALHGtahgbADrn4ta13y0cg==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Competitions'
+        });
+    </script>
+    <script nonce="ALHGtahgbADrn4ta13y0cg==" async src="https://www.googletagmanager.com/gtag/js?id=UA-12629138-1"></script>
+
+  
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggle" />
+        <meta name="twitter:creator" content="@kaggle" />
+    <meta name="og:url" content="https://kaggle.com/competitions/dog-breed-identification" />
+    <meta name="og:title" content="Dog Breed Identification" />
+    <meta name="og:description" content="Determine the breed of a dog in an image" />
+    <meta name="og:image" content="https://storage.googleapis.com/kaggle-competitions/kaggle/7327/logos/thumb76_76.png" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+
+  
+    
+
+  
+    
+    
+<script nonce="ALHGtahgbADrn4ta13y0cg==" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        antiForgeryToken: 'CfDJ8CpxVlrQp8xAogku-5T5qgiQSGJBPgcbTJ46CQk0sXnAFknMGHbrwDAXfQ4AAvszQ0PMLyQxKRbHCnRju8BHVs2IbURhmsxc0JDO8jId-ou97Q',
+        isAnonymous: true,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjI2NTcyOTksIlVzZXJJZCI6MH0.hycsnFgH-kcuqugucG-cNlL1db_WK9g95E360IMNLRI',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    const decodeUserProperty = function (escapedUserProperty) {
+        escapedUserProperty = escapedUserProperty || "";
+        try {
+            const textVersion = new DOMParser().parseFromString(escapedUserProperty, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserProperty;
+    }
+    Kaggle.Current.userDisplayName = decodeUserProperty(Kaggle.Current.userDisplayNameEscaped);
+    Kaggle.Current.userEmail = decodeUserProperty(Kaggle.Current.userEmailEscaped); 
+</script>
+
+    
+
+<script nonce="ALHGtahgbADrn4ta13y0cg==" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+
+    <script nonce="ALHGtahgbADrn4ta13y0cg==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="ALHGtahgbADrn4ta13y0cg==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="ALHGtahgbADrn4ta13y0cg==" src="/static/assets/runtime.js?v=09fd6e005db8214984b9" data-turbolinks-track="reload"></script>
+  <script nonce="ALHGtahgbADrn4ta13y0cg==" src="/static/assets/vendor.js?v=1c3ecd6c9d333a8b1797" data-turbolinks-track="reload"></script>
+  <script nonce="ALHGtahgbADrn4ta13y0cg==" src="/static/assets/app.js?v=00075c4bd4683f8130c2" data-turbolinks-track="reload"></script>
+    <script nonce="ALHGtahgbADrn4ta13y0cg==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+
+<div id="site-container"></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="ALHGtahgbADrn4ta13y0cg==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+
+<div data-component-name="CompetitionContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="ALHGtahgbADrn4ta13y0cg==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"competitionId":7327,"competitionType":"COMPETITION_TYPE_PREDICTION","competitionTitle":"Dog Breed Identification","briefDescription":"Determine the breed of a dog in an image","competitionHeaderImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/7327/logos/header.png","organizationId":4,"organizationName":"Kaggle","organizationThumbnailUrl":"https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png","dateEnabled":"2017-09-29T14:36:29.230Z","deadline":"2018-02-26T23:59:00Z","mergerDeadline":"2018-02-26T23:59:00Z","rewardQuantity":0,"totalTeams":1280,"hostSegment":"HOST_SEGMENT_PLAYGROUND","rules":{"id":21570,"postId":102661,"content":"\u003Cul\u003E\n\u003Cli\u003EPre-trained models and external data\u0026nbsp;are allowed.\u003C/li\u003E\n\u003Cli\u003EThis competition does not count towards Kaggle ranking points or medals.\u003C/li\u003E\n\u003Cli\u003EWe ask that you respect the spirit of the competition and do not cheat. Hand-labeling is forbidden.\u003C/li\u003E\n\u003C/ul\u003E\n\n\n\t\u003C!-- Begin Base Rules --\u003E\n    \u003Ch3\u003EOne account per participant\u003C/h3\u003E\n    \u003Cp\u003EYou cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.\u003C/p\u003E\n    \u003Ch3\u003ENo private sharing outside teams\u003C/h3\u003E\n    \u003Cp\u003E\n        Privately sharing code or data outside of teams is not permitted.\n        It\u0027s okay to share code if made available to all participants on the forums.\n    \u003C/p\u003E\n    \u003Ch3\u003ETeam Mergers\u003C/h3\u003E\n    \u003Cp\u003E\n        Team mergers are allowed and can be performed by the team leader. In order to merge, the combined team must have a total submission count less than or equal to the maximum allowed as of the merge date. The maximum allowed is the number of submissions per day multiplied by the number of days the competition has been running.\u003Cbr/\u003E\n    \u003C/p\u003E\n\n    \u003Ch3\u003ETeam Limits\u003C/h3\u003E\n    \u003Cp\u003EThere is no maximum team size.\u003C/p\u003E\n    \u003Ch3\u003ESubmission Limits\u003C/h3\u003E\n    \u003Cp\u003EYou may submit a maximum of 5 entries per day.\u003C/p\u003E","mimeType":"text/html","name":"rules"},"dataIntro":{"id":21571,"postId":102662,"content":"You are provided with a training set and a test set of images of dogs. Each image has a filename that is its unique \u0060id\u0060. The dataset comprises 120 breeds of dogs. The goal of the competition is to create a classifier capable of determining a dog\u0027s breed from a photo. The list of breeds is as follows:\n\n    affenpinscher\n    afghan_hound\n    african_hunting_dog\n    airedale\n    american_staffordshire_terrier\n    appenzeller\n    australian_terrier\n    basenji\n    basset\n    beagle\n    bedlington_terrier\n    bernese_mountain_dog\n    black-and-tan_coonhound\n    blenheim_spaniel\n    bloodhound\n    bluetick\n    border_collie\n    border_terrier\n    borzoi\n    boston_bull\n    bouvier_des_flandres\n    boxer\n    brabancon_griffon\n    briard\n    brittany_spaniel\n    bull_mastiff\n    cairn\n    cardigan\n    chesapeake_bay_retriever\n    chihuahua\n    chow\n    clumber\n    cocker_spaniel\n    collie\n    curly-coated_retriever\n    dandie_dinmont\n    dhole\n    dingo\n    doberman\n    english_foxhound\n    english_setter\n    english_springer\n    entlebucher\n    eskimo_dog\n    flat-coated_retriever\n    french_bulldog\n    german_shepherd\n    german_short-haired_pointer\n    giant_schnauzer\n    golden_retriever\n    gordon_setter\n    great_dane\n    great_pyrenees\n    greater_swiss_mountain_dog\n    groenendael\n    ibizan_hound\n    irish_setter\n    irish_terrier\n    irish_water_spaniel\n    irish_wolfhound\n    italian_greyhound\n    japanese_spaniel\n    keeshond\n    kelpie\n    kerry_blue_terrier\n    komondor\n    kuvasz\n    labrador_retriever\n    lakeland_terrier\n    leonberg\n    lhasa\n    malamute\n    malinois\n    maltese_dog\n    mexican_hairless\n    miniature_pinscher\n    miniature_poodle\n    miniature_schnauzer\n    newfoundland\n    norfolk_terrier\n    norwegian_elkhound\n    norwich_terrier\n    old_english_sheepdog\n    otterhound\n    papillon\n    pekinese\n    pembroke\n    pomeranian\n    pug\n    redbone\n    rhodesian_ridgeback\n    rottweiler\n    saint_bernard\n    saluki\n    samoyed\n    schipperke\n    scotch_terrier\n    scottish_deerhound\n    sealyham_terrier\n    shetland_sheepdog\n    shih-tzu\n    siberian_husky\n    silky_terrier\n    soft-coated_wheaten_terrier\n    staffordshire_bullterrier\n    standard_poodle\n    standard_schnauzer\n    sussex_spaniel\n    tibetan_mastiff\n    tibetan_terrier\n    toy_poodle\n    toy_terrier\n    vizsla\n    walker_hound\n    weimaraner\n    welsh_springer_spaniel\n    west_highland_white_terrier\n    whippet\n    wire-haired_fox_terrier\n    yorkshire_terrier\n\n## File descriptions\n\n*   \u0060train.zip\u0060 - the training set, you are provided the breed for these dogs\n*   \u0060test.zip\u0060 - the test set, you must predict the probability of each breed for each image\n*   \u0060sample_submission.csv\u0060 - a sample submission file in the correct format\n*   \u0060labels.csv\u0060 - the breeds for the images in the train set\n","mimeType":"text/markdown","name":"data-description"},"competitionSlug":"dog-breed-identification","leaderboardPercentage":100,"discussion":{"dataUrl":"/forums/7109/topics.json","id":7109,"subscription":"UNSUBSCRIBE","paramValues":{"page":1,"group":"TOPIC_LIST_GROUP_ALL","sortBy":"TOPIC_LIST_SORT_BY_HOT","category":"TOPIC_LIST_CATEGORY_ALL"}},"competitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/7327/logos/thumb76_76.png","newTopic":{"authorType":"TOPIC","forumId":7109,"parentName":"Dog Breed Identification","parentUrl":"/competitions/dog-breed-identification/discussion"},"numScoredSubmissions":1,"maxDailySubmissions":5,"maxDailySubmissionsResetDate":"2022-09-09T00:00:00Z","totalSolutionRows":0,"maxTeamSize":20,"totalCompetitors":1405,"totalEntries":8708,"evaluationAlgorithm":{"id":30,"abbreviation":"MulticlassLoss","name":"Multiclass Loss","description":"Negative log likelihood divided by the number of observations--solution is true category label (0 to n-1), submission is columns where Jth row is pred. prob. of J. Normalizes submission rows so sum is 1.","isPublic":true,"environmentRenderType":"ENVIRONMENT_RENDER_TYPE_JSON"},"allowPrivateLeaderboardDisplay":true,"pages":[{"id":21572,"postId":103017,"content":"Who\u0027s a good dog? Who likes ear scratches? Well, it seems those fancy deep neural networks don\u0027t have *all* the answers. However, maybe they can answer that ubiquitous question we all ask when meeting a four-legged stranger: what kind of good pup is that?\n\nIn this playground competition, you are provided a strictly canine subset of [ImageNet][2] in order to practice fine-grained image categorization. How well you can tell your Norfolk Terriers from your Norwich Terriers? With 120 breeds of dogs and a limited number training images per class, you might find the problem more, err, ruff than you anticipated.\n\n![Border collies][1]\n\n\n### Acknowledgments\n\nWe extend our gratitude to the creators of the [Stanford Dogs Dataset][3] for making this competition possible: Aditya Khosla, Nityananda Jayadevaprakash, Bangpeng Yao, and Fei-Fei Li.\n\n\n  [1]: https://storage.googleapis.com/kaggle-competitions/kaggle/3333/media/border_collies.png\n  [2]: https://www.kaggle.com/c/imagenet-object-detection-challenge\n  [3]: http://vision.stanford.edu/aditya86/ImageNetDogs/","mimeType":"text/x-markdown","name":"description","isPublished":true},{"id":21573,"postId":102711,"content":"\u003Cp\u003ESubmissions are evaluated on \u003Ca href=\u0022https://www.kaggle.com/wiki/MultiClassLogLoss\u0022\u003EMulti Class Log Loss\u003C/a\u003E\u00A0between the predicted probability and the observed target.\u003C/p\u003E\n\u003Ch2\u003ESubmission File\u003C/h2\u003E\n\u003Cp\u003EFor each image\u00A0in the test set, you must predict a probability for each of the different breeds. The file should contain a header and have the following format:\u003C/p\u003E\n\u003Cpre\u003Eid,affenpinscher,afghan_hound,..,yorkshire_terrier\u003Cbr /\u003E000621fb3cbb32d8935728e48679680e,0.0083,0.0,...,0.0083\u003Cbr /\u003Eetc.\u003C/pre\u003E","mimeType":"text/x-markdown","name":"evaluation","isPublished":true}],"databundleVersionId":861871,"hasLeaderboard":true,"finalLeaderboardHasBeenVerified":true,"publicLeaderboardMessage":"","privateLeaderboardMessage":"","hasKernels":true,"hasSolutionFile":true,"rawDataUrl":"/c/7327/publicleaderboarddata.zip","mySubmissionsCount":0,"hostSegmentTitle":"Playground","competitionHasLaunched":true,"competitionHasEnded":true,"ownerTwitter":"kaggle","externalCompetitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/7327/logos/thumb76_76.png","competitionUrl":"/competitions/dog-breed-identification","mergerDeadlineHasPassed":true,"categories":{"tags":[{"id":14102,"name":"image data","fullPath":"data type \u003E image data","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27image data%27","datasetCount":4293,"competitionCount":117,"notebookCount":4402,"tagUrl":"/tags/image-data","displayName":"Image Data"},{"id":14202,"name":"multiclass classification","fullPath":"technique \u003E classification \u003E multiclass classification","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27multiclass classification%27","datasetCount":790,"competitionCount":52,"notebookCount":2848,"tagUrl":"/tags/multiclass-classification","displayName":"Multiclass Classification"},{"id":7301,"name":"animals","fullPath":"subject \u003E earth and nature \u003E animals","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27animals%27","description":"The animals tag is as diverse as a rainforest. Is there a correlation between animal bites and NYC rat sightings? We\u0027re not sure. But the data is here and the world needs to know.","datasetCount":1062,"competitionCount":13,"notebookCount":866,"tagUrl":"/tags/animals","displayName":"Animals"},{"name":"multiclassloss","description":"Negative log likelihood divided by the number of observations--solution is true category label (0 to n-1), submission is columns where Jth row is pred. prob. of J. Normalizes submission rows so sum is 1."}],"type":"TAG_TYPE_COMPETITION"},"competitionHostClaims":{},"modelFileSizeBytes":0,"@wf": "Competitions.Legacy.CompetitionDtoWireFormat3"});performance && performance.mark && performance.mark("CompetitionContainer.componentCouldBootstrap");</script>
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
