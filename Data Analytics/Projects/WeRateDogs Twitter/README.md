@@ -410,8 +410,101 @@ engine = create_engine('sqlite:///weratedogs.db')
 master_df.to_sql('twitter_archive_master', engine, index=False)
 ```
 
+## Analyzing and Visualizing Data
+Here, we'll look at our dataset for insights in regards to the following questions;
+1. What are the popular dog breeds that got rated by WeRateDogs?
+1. Who are the top 3 good boys/girls?
+2. What's everybody's top 10 favorite dogs?
+4. What is the average rating of dogs in respect to their dog stages?
+5. Who are the best dogs of the different dog stages?
+
+### Importing libraries
+```python:
+import matplotlib
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+sns.set_style('darkgrid')
+matplotlib.rcParams['font.size'] = 14
+matplotlib.rcParams['figure.figsize'] = (9, 5)
+matplotlib.rcParams['figure.facecolor'] = '#00000000'
+```
+### **1. What are the top dog breeds that got rated by WeRateDogs?**
+```python:
+plt.figure(figsize=(10,7))
+sns.barplot(x=top_dog_breeds.values, y=top_dog_breeds.index)
+plt.title("Top 15 Dog Breeds Rated by WeRateDogs")
+plt.xlabel("Count")
+plt.ylabel("Dog Breed");
+```
+![dsd](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/top-15-dog-breeds-rated-by-weratedogs.png)
+
+Golden retrievers, Labrador retrievers and pembroke are the top 3 dog breeds that got rated by WeRateDogs with a count of 138, 88 and 85 respectively.
+
+### **2. Who are the top 3 good boys/girls?**
+I'll only deal with dogs that have a name for this analysis.
+```python:
+# subsetting rows where name is not NaN
+dogs_with_names = master_df[master_df.name.notna()]
+good_dogs = dogs_with_names.sort_values('rating', ascending=False).head()
+```
+```python:
+plt.figure(figsize=(10,7))
+sns.barplot(y=good_dogs.name, x=good_dogs.rating)
+plt.title("Top 5 Good Boys/Girls")
+plt.ylabel("Name")
+plt.xlabel("Rating");
+```
+![fsfs](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/Top%205%20Good%20Boys-Girls.png)
+
+Looks like Atticus, Logan and Sam are the top 3 good dogs with ratings of 177.6, 7.5, 3.4. I found out that there's no invalid outlier in this dataset 😄, Atticus, Logan and Sam all got high ratings because of their costumes but Atticus seemed to be dressed better.
+
+### **3. What's everybody's top 10 favorite dogs?**
+I also only dealt with dogs with names here,
+```python:
+favorite_dogs = dogs_with_names.sort_values('favorite_count', ascending=False).head(10)
+```
+```python:
+plt.figure(figsize=(10,7))
+sns.barplot(x=favorite_dogs.favorite_count, y=favorite_dogs.name)
+plt.title("Everybody's Top 10 Favorite Dogs")
+plt.xlabel("Count")
+plt.ylabel("Dog Breed");
+```
+![gdgdf](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/Everybody's%20Top%2010%20Favorite%20Dogs.png)
+
+The most favorite dog is Stephan with 111.1K likes and 51.4K retweets.
+
+### **4. What is the average rating of dogs in respect to their dog stages?**
+```python:
+dog_stage_avg_rating =  master_df.groupby('dog_stage').mean()['rating']
+dog_stage_avg_rating
+```
+![sdsd](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/dog_stage_avg_rating.png)
+
+```python:
+plt.figure(figsize=(10,7))
+sns.barplot(x=dog_stage_avg_rating.index, y=dog_stage_avg_rating.values)
+plt.title("Average Dog Stage Ratings")
+plt.xlabel("Dog Stage")
+plt.ylabel("Average Rating");
+```
+![sfsfdfd](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/average%20dog%20rating.png)
+
+It looks like puppos were rated, on an average, higher than other dog stages. While puppers have the lowest average rating.
+
+### **5. Who are the best dogs of the different dog stages?**
+```python:
+dog_stage_max_ratings =  dogs_with_names.loc[dogs_with_names.groupby('dog_stage')['rating'].idxmax()]
+dog_stage_max_ratings.drop(['timestamp','expanded_urls','source','text'],axis=1)
+```
+![fdfdfd](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/dog_stage_max_rating.png)
+
+We can see that Sophie the pupper had the highest rating of 2.7 while Grizzwald the floofer and Stuart the puppo had the least rating of 1.3 with Cassie the doggo in the middle with 1.4.
+
 ## Inferences and Conclusions
-This was a reallt fun dataset to wrangle and although, there's still more cleaning that can be done, I believe the insights that I was able to derive are interesting. Let's revisits the questions that were posed earlier on.
+This was a really fun dataset to wrangle and although, there's still more cleaning that can be done, I believe the insights that I was able to derive are interesting. Let's revisits the questions that were posed earlier on.
 
 ### **Q1. What are the popular dog breeds that got rated by WeRateDogs?**
 I found out that golden retrievers, Labrador retrievers and pembroke were the top 3 dog breeds that got rated by WeRateDogs with a count of 138, 88 and 85 respectively.
@@ -427,3 +520,10 @@ It was found that puppos were rated, on an average, higher than other dog stages
 
 ### **Q5. Who are the best dogs of the different dog stages?**
 It was noticed that Sophie the pupper had the highest rating of 2.7 while Grizzwald the floofer and Stuart the puppo had the least rating of 1.3 with Cassie the doggo in the middle with 1.4.
+
+## Limitations
+* A reasonable piece of the dataset had missing names and dog stages. This is a data entry issue because the source wasn't consistent with providing the names and dog stages.
+* The image prediction dataset can be improved on. It had a hard time properly identifying the breed of most puppies and images that had other items in it. Further work can be done to improve its prediction.
+
+## References
+* [Dog Breed Identification, Kaggle](https://www.kaggle.com/competitions/dog-breed-identification/data)
