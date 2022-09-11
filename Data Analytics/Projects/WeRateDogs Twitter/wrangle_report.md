@@ -299,6 +299,7 @@ The wrong names included,
 twitter_enhanced_clean.name[twitter_enhanced_clean.name.str.islower()].unique()
 ```
 ![incorrectNames.png](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/incorrect%20names.png)
+
 This was handled by;
 - Identifying the incorrect names. They were all in lower cases except for 'None'
 - Replace these names and 'None' with `np.nan` since the actual names couldn't be gotten.
