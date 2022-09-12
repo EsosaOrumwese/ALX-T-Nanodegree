@@ -460,6 +460,10 @@ plt.xlabel("Rating");
 
 Looks like Atticus, Logan and Sam are the top 3 good dogs with ratings of 177.6, 7.5, 3.4. I found out that there's no invalid outlier in this dataset 😄, Atticus, Logan and Sam all got high ratings because of their costumes but Atticus seemed to be dressed better.
 
+Atticus            |  Logan     |  Sam
+:-------------------------:|:-------------------------:|:-------------------------:
+![](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/atticus-best-dog.png)  |  ![](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/logan-best-dog.png)  | ![](/Data%20Analytics/Projects/WeRateDogs%20Twitter/report-img/sam-best-dog.png)
+
 ### **3. What's everybody's top 10 favorite dogs?**
 I also only dealt with dogs with names here,
 ```python:
