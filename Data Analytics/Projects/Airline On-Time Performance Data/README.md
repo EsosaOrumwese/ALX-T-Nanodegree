@@ -62,8 +62,8 @@ It was seen that Delta Air Lines Inc. has the least bad delays overall while, of
 In 2007, just over 50% of all registered flights were either on-time or early. The remaining approximately 45% were either delayed or outright cancelled. A majority of the delays and cancellations occured from January to mid-April, then from June to August and from the last week of November to December. Southwest Airlines Co. had the most registered flights (1,158,878 flights) but when compared to the top 7 airlines, it had the least percentage of on-time/early flights. When looking at acceptable delays (inclusive of on-time/early flights and small delays), both Delta Air Lines Inc and Skywest Airlines inc had the best acceptable delays with
 
 ## Recommendations
-* There are still more insights to be drawn from the complete dataset for 1987 to 2008. Tools for working with big data should be employed due to the large size of the combined data.
-* Further analysis should look into questions which revolve around;
+* There are still more insights to be drawn from the complete dataset for 1987 to 2008. It is advised that tools for working with big data should be employed due to the large size of the combined data and its effect on memory.
+* Further analysis should look into questions which revolve around but not limited to;
   * When is the best time of day/day of week/time of year to fly to minimise delays?
   * Do older planes suffer more delays?
   * How does the number of people flying between different locations change over time?
