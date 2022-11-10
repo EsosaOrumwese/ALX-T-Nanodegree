@@ -4,7 +4,7 @@
 ## Dataset
 Have you ever been stuck in an airport because your flight was delayed or cancelled and wondered if you could have predicted it if you'd had more data? This is your chance to find out. 
 
-The complete dataset consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. However only data for 2007 will be used for this project. This is a large dataset: there are nearly 120 million records in total, and takes up 1.6 gigabytes of space compressed and 12 gigabytes when uncompressed. The data comes originally from RITA where it is described in detail. You can download the data [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7).
+The dataset used consists of flight arrival and departure details for all commercial flights within the USA in 2007. It is a large dataset with nearly 7.5 million records in total, and takes up 1.2 gigabytes of space. The data comes originally from RITA where it is described in detail. You can download the data [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7).
 
 
 ## Summary of Findings
@@ -37,7 +37,7 @@ When looking at the distribution, neglecting the on-time and early flights, we c
 
 ![img](figures/pct_of_DelayGroup_month_except_OnTime.png)
 
-### Q4. What is the distribution of daily flight cancellations?
+### Q4. What is the distribution of daily flight cancellations like?
 When plotting the log transform of the right skewed daily flight cancellations on a calendar plot, we can see basically 3 periods of increase in cancellations. From January to mid-April, then from June to August and from the last week of November to December.
 
 ![img](figures/calplot_log_daily_flight_cancellations.png)
