@@ -58,8 +58,8 @@ It was seen that Delta Air Lines Inc. has the least bad delays overall while, of
 
 ![img](figures/top_airlines_pct_of_delays.png)
 
-## Conclusion
-In 2007, just over 50% of all registered flights were either on-time or early. The remaining approximately 45% were either delayed or outright cancelled. A majority of the delays and cancellations occured from January to mid-April, then from June to August and from the last week of November to December. Southwest Airlines Co. had the most registered flights (1,158,878 flights) but when compared to the top 7 airlines, it had the least percentage of on-time/early flights. When looking at acceptable delays (inclusive of on-time/early flights and small delays), both Delta Air Lines Inc and Skywest Airlines inc had the best acceptable delays with
+## Key Insights
+In 2007, just over 50% of all registered flights were either on-time or early. The remaining approximately 45% were either delayed or outright cancelled. A majority of the delays and cancellations occured from January to mid-April, then from June to August and from the last week of November to December. Southwest Airlines Co. had the most registered flights (1,158,878 flights) but when compared to the top 7 airlines, it had the least percentage of on-time/early flights. When looking at acceptable delays (inclusive of on-time/early flights and small delays), both Delta Air Lines Inc and Skywest Airlines inc had the best acceptable delays while both American Airlines and American Eagles Airlines had the worst of the group. 
 
 ## Recommendations
 * There are still more insights to be drawn from the complete dataset for 1987 to 2008. It is advised that tools for working with big data should be employed due to the large size of the combined data and its effect on memory.
@@ -69,3 +69,6 @@ In 2007, just over 50% of all registered flights were either on-time or early. T
   * How does the number of people flying between different locations change over time?
   * How well does weather predict plane delays?
   * Can you detect cascading failures as delays in one airport create delays in others? Are there critical links in the system?
+
+## References
+[Data Expo 2009: Airline On time data, ASA Statistical Computing Dataverse, Havard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HG7NV7)
