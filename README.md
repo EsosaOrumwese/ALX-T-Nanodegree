@@ -6,3 +6,5 @@ career progress.
 
 This repo contains the case studies and projects carried during the course of this Nanodegree 
 programme.
+
+![certificate](Data%20Analytics/nanodegree_certificate.png)
